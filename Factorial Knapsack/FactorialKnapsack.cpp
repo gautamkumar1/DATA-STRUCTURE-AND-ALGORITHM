@@ -10,12 +10,13 @@ int factorial_Knapsack(vector<int>&weight,vector<int>&value,int W,int n){
     }
     sort(pi.begin(),pi.end(),greater<int>());
     int solution = -1;
+     int amount = -1;
     int i = 0;
     cout<<"i : "<<i+1<<endl;
     while (W>0)
     {
         cout<<"i : "<<i+1<<endl;
-        int amount = min(W,weight[i]);
+        amount = min(W,weight[i]);
         cout<<"Amount : "<<amount<<endl;
         solution = amount;
         W = W-amount;
