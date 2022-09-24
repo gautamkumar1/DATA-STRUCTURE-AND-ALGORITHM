@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 bool isSafe(vector<vector<int>>&m,vector<vector<int>> visited,int n,int x,int y){
     if((x>=0 && x<n) && (y>=0 && y<n) && (visited[x][y]==0) && (m[x][y]==1)){
@@ -73,6 +74,7 @@ vector<string> findPath(vector<vector<int>> &m, int n){
     }
     string path = "";
     solve(m,ans,visited,n,srcX,srcY,path);
+    sort(ans.begin(),ans.end());
     return ans;
     
 }
