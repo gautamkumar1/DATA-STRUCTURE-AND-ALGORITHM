@@ -29,26 +29,15 @@ vector<vector<int>> subsets(vector<int> &nums)
     return ans;
 }
 
-void printarray(vector<int> arr)
-{
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
-
 int main()
 {
     vector<int> nums = {1, 2, 3};
     vector<vector<int>> ans = subsets(nums);
-    for (int i = 0; i < ans.size(); i++)
-    {
-        for (int j = 0; j < ans[0].size(); j++)
-        {
-            cout << ans[i][j] << " ";
+    for(int i=0; i<ans.size(); i++){
+        for(int j=0; j<ans[0].size(); j++){
+            cout<<ans[i][j]<<" ";
         }
-        cout << endl;
+        cout<<endl;
     }
     return 0;
 }
