@@ -77,7 +77,7 @@ Node*reverse(Node*&head){
     }
     return prev;
 }
-// Apporach 2 (Optimial Solution) : T(n) = O(1) and S(n) = O(1)
+// Apporach 2 (Optimial Solution) : T(n) = O(n) and S(n) = O(1)
 bool is_Linked_List_Palindrome(Node*&head){
     if(head==NULL || head->next == NULL){
         return 1;
