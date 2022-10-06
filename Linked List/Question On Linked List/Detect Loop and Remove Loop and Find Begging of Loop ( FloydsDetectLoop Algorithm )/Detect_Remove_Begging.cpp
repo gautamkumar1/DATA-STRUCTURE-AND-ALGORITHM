@@ -61,7 +61,7 @@ Node*FloydsDetectLoop(Node*&head){
     }
     return NULL;
 }
-
+ 
 Node* get_Beggining_Node_of_Loop(Node*&head){
     if(head==NULL){
         return head;
