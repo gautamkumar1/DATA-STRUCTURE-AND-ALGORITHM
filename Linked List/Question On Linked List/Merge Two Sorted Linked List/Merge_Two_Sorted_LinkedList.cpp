@@ -20,7 +20,7 @@ Node* Merge(Node*first,Node*secound){
     Node*current1 = first;
     Node*next1 = current1->next;
     Node*current2 = secound;
-    Node*next2 = current2->next;
+    Node*next2 = NULL;
     while (next1!=NULL && current2!=NULL)
     {
         if ((current2->data >= current1->data) && (current2->data <= next1->data))
@@ -70,10 +70,10 @@ Node*MergeTwoSortedLinkedList(Node*first,Node*secound){
 void display(Node*ptr){
     while (ptr!=NULL)
     {
-        cout<<ptr->data<<" ";
+        cout<<ptr->data<<" -> ";
         ptr = ptr->next;
     }
-    cout<<endl;
+    cout<<"null"<<endl;
 }
 
 int main(){

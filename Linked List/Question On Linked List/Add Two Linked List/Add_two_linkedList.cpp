@@ -108,6 +108,7 @@ Node*Add_Optimal_Solution(Node*&first,Node*&secound){
     }
     return ansHead;
 }
+// Time complexity : O(max(m,n)) And Space complexity : O(max(m,n)).
 Node*AddTwoLinkedList(Node*&first,Node*&second){
     // Step 1 : reverse both linked list
     first = reverse(first);
@@ -131,14 +132,16 @@ void display(Node*ptr){
 
 int main(){
     // First Linked List create
-    Node*first = new Node(4);
-    Node*node2 = new Node(5);
+    Node*first = new Node(2);
+    Node*node2 = new Node(4);
+    Node*node3 = new Node(3);
     first->next = node2;
-    node2->next = NULL;
+    node2->next = node3;
+    node3->next = NULL;
     // Second linked list created
-    Node *second = new Node(3);
-    Node*second2 = new Node(5);
-    Node*second3 = new Node(5);
+    Node *second = new Node(5);
+    Node*second2 = new Node(6);
+    Node*second3 = new Node(4);
     second->next = second2;
     second2->next = second3;
     second3->next = NULL;
