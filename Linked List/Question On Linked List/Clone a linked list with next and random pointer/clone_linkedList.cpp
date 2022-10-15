@@ -110,7 +110,7 @@ Node*CopyLinkedList(Node*&head){
     while (original!=NULL && clone!=NULL)
     {
         original->next = clone->next;
-        original = original->next;
+        original = original->next; 
         if(original!=NULL){
             clone->next = original->next;
         }
