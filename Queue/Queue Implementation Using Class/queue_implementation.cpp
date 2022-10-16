@@ -8,8 +8,8 @@ class Queue{
     public:
     Queue(int size){
         this->size = size;
-        this->front = -1;
-        this->rear = -1;
+        this->front = 0;
+        this->rear = 0;
         arr = new int[size];
     }
     bool isEmpty(){
@@ -30,7 +30,8 @@ class Queue{
             cout<<"Sorry We Cannot Push "<<data<<" in queue bcz Queue is Overflow"<<endl;
             return ;
         }
-        arr[++rear] = data;
+        arr[rear] = data;
+        rear++;
         cout<<data<<" is Successfull Enqueue in Queue"<<endl;
     }
     int Dequeue(){
@@ -38,9 +39,20 @@ class Queue{
             cout<<"Queue is Underflow "<<endl;
             return -1;
         }
-        front++;
         int val = arr[front];
+        arr[front] = -1;
+        front++;
+        if(front==rear){
+            front =0;
+            rear = 0;
+        }
         return val;
+    }
+    int FrontValue(){
+        if(isEmpty()){
+            return -1;
+        }
+        return arr[front];
     }
 };
 
@@ -51,6 +63,7 @@ int main(){
     q->Enqueue(3);
     q->Enqueue(4);
     q->Enqueue(5);
+    cout<<"Front Value is "<<q->FrontValue()<<endl;
     cout<<"Dequeue Element is "<<q->Dequeue()<<endl;
     cout<<"Queue Is Full Or Not "<<q->isFull()<<endl;
     cout<<"Queue Is Empty Or Not "<<q->isEmpty()<<endl;
