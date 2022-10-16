@@ -17,24 +17,33 @@ class Stack{
         if(top==-1){
             return 1;
         }
-        return 0;
+        else
+        {
+            return 0;
+        }
     }
     // Craeting a isFull function
     bool isFull(){
         if(top==size-1){
             return 1;
         }
-        return 0;
+        else
+        {
+            return 0;
+        }
+        
     }
     // Creating a push function
     void push(int data){
         if(isFull()){
-            cout<<"Stack is overflow"<<endl;
+            cout<<"Sorry we cannot push "<<data<<" because stack is overflow"<<endl;
         }
         else
         {
+            
             top++;
             arr[top] = data;
+            cout<<data<<" is Push SucessFull in Stack"<<endl;
         }
     }
     // creating a pop function
@@ -54,11 +63,28 @@ class Stack{
     }
     // Creating peek / top function
     int peek(){
+        if(isEmpty()){
+            return -1;
+        }
         return arr[top];
     }
     // creating a size function
     int length(){
         return size;
+    }
+    // Stack bottom function create
+    int BottomElement(){
+        if(isEmpty()){
+            return -1;
+        }
+        return arr[size-1];
+    }
+    // Stack TopValue Function create
+    int TopElement(){
+       if(isEmpty()){
+            return -1;
+        }
+        return arr[0]; 
     }
 };
 
@@ -69,9 +95,13 @@ int main(){
     st.push(2);
     st.push(3);
     st.push(48);
+    st.push(478);
     cout<<"Size of stack is "<<st.length()<<endl;
     cout<<"Top element is "<<st.peek()<<endl;
-    cout<<"Popped Element is "<<st.pop()<<endl;
     cout<<"Stack is Empty ? "<<st.isEmpty()<<endl;
-    cout<<"Stack is full ? "<<st.isEmpty()<<endl;
+    cout<<"Stack is full ? "<<st.isFull()<<endl;
+    cout<<"Stack Top Value is "<<st.TopElement()<<endl;
+    cout<<"Stack Bottom Value is "<<st.BottomElement()<<endl;
+    cout<<"Popped Element is "<<st.pop()<<endl;
+    return 0;
 }

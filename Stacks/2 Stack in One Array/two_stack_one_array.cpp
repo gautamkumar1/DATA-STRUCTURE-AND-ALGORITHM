@@ -23,7 +23,7 @@ class TwoStack{
         }
     }
     int pop1(){
-        if(top1>0){
+        if(top1>=0){
             int val = arr[top1];
             top1--;
             return val;

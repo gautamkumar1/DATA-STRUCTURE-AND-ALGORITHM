@@ -17,7 +17,6 @@ void solve(stack<int>&inputStack, int cnt,int size){
 }
 void deleteMiddle(stack<int>&inputStack, int N){
 	
-   // Write your code here
     int cnt = 0;
     solve(inputStack,cnt,N);
    
