@@ -1,4 +1,7 @@
 {
   "C_Cpp.errorSquiggles": "disabled",
-  "code-runner.clearPreviousOutput": true
+  "code-runner.clearPreviousOutput": true,
+  "files.associations": {
+    "vector": "cpp"
+  }
 }
