@@ -68,12 +68,42 @@ class Trie{
         // Recursion Call
         return searchUntil(child,word.substr(1));
     }
+
+    // Remove function
+    void removeword(string word){
+        removeUntil(root,word);
+    }
+    void removeUntil(TrieNode*root,string word){
+        if(word.length()==0){
+            root->isTerminal = false;
+            return;
+        }
+        int index = word[0]-'A';
+        TrieNode*child;
+        if(root->children[index]!=NULL){
+            child = root->children[index];
+        }
+        else
+        {
+            root->isTerminal = false;
+            return ;
+        }
+        removeUntil(child,word.substr(1));
+    }
 };
 
 int main(){
     Trie*t = new Trie();
     t->insertWord("GAUTAM");
     cout<<"Present or Not : "<<t->searchWord("GAUTAM")<<endl;
+    t->removeword("GAUTAM");
+    if(t->searchWord("GAUtAM")){
+        cout<<"Not Removed Word"<<endl;
+    }
+    else
+    {
+        cout<<"Sucessfull Remove Word"<<endl;
+    }
     return 0;
 
 }
