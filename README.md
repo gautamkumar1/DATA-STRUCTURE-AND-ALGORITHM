@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-Welcome to the Data Structures and Algorithms repository! This repository is a collection of popular data structures and algorithms implemented in programming languages such as C++.
+Welcome to the Data Structures and Algorithms repository! This repository is a collection of popular data structures and algorithms implemented in programming languages in C++.
 
 
 # Table of Contents
