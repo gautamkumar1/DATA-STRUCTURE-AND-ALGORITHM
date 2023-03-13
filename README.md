@@ -5,7 +5,7 @@
 
 Welcome to the Data Structures and Algorithms repository! This repository is a collection of popular data structures and algorithms implemented in programming languages in C++.
 
-# Here I will be Uploaded all the codes and homework solutions that i will be solving in my Complete C++ Placement DSA Course by Love Babbar Bhaiya.
+
 
 # Table of Contents
 
