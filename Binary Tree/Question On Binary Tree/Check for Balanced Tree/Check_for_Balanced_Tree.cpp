@@ -31,16 +31,17 @@ node *bullidTree(node *root)
     return root;
 }
 
-int height(node*root){
-    return root==NULL ? 0 : max(height(root->left),height(root->right))+1;
+int Get_height(node*root){
+    return root==NULL ? 0 : max(Get_height(root->left),Get_height(root->right))+1;
 }
+// T(n) : O(n^2)
 bool isBalanced(node*root){
     if(root==NULL){
         return true;
     }
     bool left = isBalanced(root->left);
     bool right = isBalanced(root->right);
-    bool diff = abs(height(root->left)-height(root->right))<=1;
+    bool diff = abs(Get_height(root->left)-Get_height(root->right))<=1;
     if(left && right && diff){
         return true;
     }
@@ -49,11 +50,24 @@ bool isBalanced(node*root){
         return false;
     }
 }
-
+// Optimize Solution : T(n) -> O(n)  and s(n) : O(n)
+int height(node*root){
+    if(root == NULL) return 0;
+    int left = height(root->left);
+    if(left == -1) return -1;
+    int right = height(root->right);
+    if(right == -1) return -1;
+    if( abs(left - right) > 1) return -1;
+    return max(left,right)+1;
+}
+bool isBalancedBT(node* root) {
+   if(root==NULL) return true;
+   return height(root) != -1;
+}
 int main(){
     node*root = NULL;
     root = bullidTree(root);
-    if(isBalanced(root)){
+    if(isBalancedBT(root)){
         cout<<"Balanced Tree"<<endl;
     }
     else

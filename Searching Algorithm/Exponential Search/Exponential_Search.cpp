@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+// Overal time Complexity : O(log2^logm/2)
 int Binary_Search(int *arr, int low, int high, int k)
 {
     while (low <= high)
@@ -20,7 +21,7 @@ int Binary_Search(int *arr, int low, int high, int k)
     }
     return -1;
 }
-
+// T(n) : O(logm)
 int Exponential_Search(int *arr, int n, int k)
 {
     if (arr[0] == k)
