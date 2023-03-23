@@ -14,7 +14,7 @@ void DFS(unordered_map<int,list<int> > &adj,unordered_map<int,bool> &visited,vec
         if(!visited[nbr]){
             DFS(adj,visited,dis,low,ap,node,timer,nbr);
             // update child low
-            low[node] = min(low[node],low[nbr]);
+            low[node] = min(low[node],low[nbr]); 
             // Articulation Points or not -> the condition for identifying an articulation point should be
             if(low[nbr] >= dis[node] && parent != -1){
                 ap[node] = 1;
